@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Search the current weather for any city."
+    />
+    <title>Weather Now</title>
+    <link rel="preconnect" href="https://openweathermap.org" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="weather-card" aria-labelledby="app-title">
+        <header class="card-header">
+          <p class="eyebrow">Live conditions</p>
+          <h1 id="app-title">Weather Now</h1>
+        </header>
+
+        <form id="search-form" class="search-form" novalidate>
+          <label class="sr-only" for="city-input">City name</label>
+          <input
+            id="city-input"
+            name="city"
+            type="text"
+            placeholder="Search a city..."
+            autocomplete="off"
+            required
+          />
+          <button type="submit">Search</button>
+        </form>
+
+        <div id="weather-content" class="weather-content" aria-live="polite">
+          <div class="empty-state">
+            <span class="empty-icon" aria-hidden="true">☀</span>
+            <p>Enter a city to see its current weather.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
